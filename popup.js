@@ -79,7 +79,7 @@ function openPopup() {
     closeButton.addEventListener("click", closePopup);
 
     function loadContent(fileUrl) {
-        iframe.src = 'http://localhost:3000/chatPage';
+        iframe.src = 'http://localhost:3000/';
     }
     loadContent("yourfile.html");
 
