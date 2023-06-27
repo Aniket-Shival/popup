@@ -89,5 +89,6 @@ button.addEventListener("click", openPopup);
 
 console.log(window.location.href,"gggggggggggggggggggggggggg")
 const scriptElement = document.getElementById("popup");
+console.log("S",scriptElement)
 const credValue = scriptElement.getAttribute("cred");
 console.log(credValue);
