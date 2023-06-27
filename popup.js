@@ -87,7 +87,7 @@ function openPopup() {
 
 button.addEventListener("click", openPopup);
 
-console.log(window.location.href)
+console.log(window.location.href,"gggggggggggggggggggggggggg")
 console.log("HELLO")
 const idValueDirect = element.cred;
 console.log(idValueDirect);
