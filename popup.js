@@ -22,7 +22,7 @@ function openPopup() {
     popup.style.bottom = "15px";
     popup.style.right = "10px";
     popup.style.padding = "20px";
-    popup.style.minWidth = "240px";
+    popup.style.minWidth = "200px";
     popup.style.width = '30%'
     
     popup.style.height = "70%"
