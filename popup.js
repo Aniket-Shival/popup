@@ -35,7 +35,7 @@ function openPopup() {
     popup.style.zIndex = "9999";
 
     var iframe = document.createElement("iframe");
-    iframe.style.minWidth = "300px";
+    iframe.style.minWidth = "200px";
     iframe.style.width = "95%"
     iframe.style.height = "100%";
     iframe.style.border = "none";
