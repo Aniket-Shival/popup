@@ -23,9 +23,11 @@ function openPopup() {
     popup.style.right = "10px";
     popup.style.padding = "20px";
     popup.style.minWidth = "200px";
-    popup.style.width = '30%'
+  popup.style.maxWidth = "500px";
+    popup.style.width = '80%';
     
-    popup.style.height = "70%"
+        popup.style.height = "70%";
+   popup.style.maxHeight = "500px";
     popup.style.marginLeft = "2px";
     popup.style.marginRight = "20px";
   popup.style.padding = "2px";
