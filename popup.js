@@ -61,9 +61,9 @@ function openPopup() {
     // closeButton.innerText = "Close";
     closeButton.style.position = "absolute";
     closeButton.style.top = "10px";
-    closeButton.style.right = "20px";
+    closeButton.style.right = "10px";
     closeButton.style.padding = "5px";
-    closeButton.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/thumbnails/017/350/109/small_2x/red-cross-button-in-round-shape-png.png')"; 
+    closeButton.style.backgroundImage = "url('https://github.com/Aniket-Shival/popup/blob/Aniket-Shival-try-8/icons8-close-window-48.png?raw=true')"; 
    closeButton.style.backgroundColor = "transparent"; 
         closeButton.style.backgroundSize = "25px 25px"; 
         closeButton.style.backgroundRepeat = "no-repeat";
