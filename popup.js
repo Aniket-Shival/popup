@@ -1,17 +1,23 @@
 
 var button = document.createElement("button");
-button.innerText = "Open Popup";
+// button.innerText = "Open Popup";
 
 
 button.style.position = "fixed";
 button.style.bottom = "20px";
 button.style.right = "40px";
 button.style.padding = "10px";
-button.style.backgroundColor = "blue";
+
+ button.style.backgroundColor = "transparent"; 
+        button.style.backgroundImage = "url('https://github.com/Aniket-Shival/popup/blob/Aniket-Shival-try-7/Zema_Bird_Transperent.png?raw=true')"; 
+        button.style.backgroundSize = "100px 100px"; 
+        button.style.backgroundRepeat = "no-repeat";
 button.style.color = "white";
 button.style.border = "none";
 button.style.borderRadius = "5px";
 button.style.zIndex = "9999";
+button.style.width = "100px";
+button.style.height = "100px"
 
 document.body.appendChild(button);
 
@@ -30,32 +36,40 @@ function openPopup() {
    popup.style.maxHeight = "500px";
     popup.style.marginLeft = "2px";
     popup.style.marginRight = "20px";
-  popup.style.padding = "2px";
+  popup.style.padding = "0px";
   popup.style.paddingTop = "40px";
-    popup.style.backgroundColor = "none";
+  popup.style.paddingBottom = "20px";
+    popup.style.backgroundColor = "#3D4648";
+ popup.style.borderRadius = "20px";
    
     popup.style.zIndex = "9999";
 
     var iframe = document.createElement("iframe");
     iframe.style.minWidth = "200px";
-    iframe.style.width = "95%"
+    iframe.style.width = "100%"
     iframe.style.height = "100%";
     iframe.style.border = "none";
      iframe.style.padding = '0';
-  iframe.style.backgroundColor='none';
+   iframe.style.backgroundColor = 'transparent'; 
    iframe.style.position = "relative";
     iframe.style.bottom = "0px";
-    iframe.style.right = "-20px";
+    iframe.style.right = "0px";
 
     popup.appendChild(iframe);
     
     var closeButton = document.createElement("button");
-    closeButton.innerText = "Close";
+    // closeButton.innerText = "Close";
     closeButton.style.position = "absolute";
-    closeButton.style.top = "0px";
-    closeButton.style.right = "0px";
+    closeButton.style.top = "10px";
+    closeButton.style.right = "20px";
     closeButton.style.padding = "5px";
-    closeButton.style.backgroundColor = "red";
+    closeButton.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/thumbnails/017/350/109/small_2x/red-cross-button-in-round-shape-png.png')"; 
+   closeButton.style.backgroundColor = "transparent"; 
+        closeButton.style.backgroundSize = "25px 25px"; 
+        closeButton.style.backgroundRepeat = "no-repeat";
+    // closeButton.style.backgroundColor = "red";
+   closeButton.style.height = '25px';
+  closeButton.style.width = '25px'
     closeButton.style.color = "white";
     closeButton.style.border = "none";
     closeButton.style.borderRadius = "5px";
