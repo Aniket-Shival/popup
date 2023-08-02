@@ -2,7 +2,7 @@
 var button = document.createElement("button");
 // button.innerText = "Open Popup";
 
-
+buttonZ.id = "my-button";
 button.style.position = "fixed";
 button.style.bottom = "20px";
 button.style.right = "40px";
@@ -23,7 +23,7 @@ document.body.appendChild(button);
 
 function openPopup() {
 
-   var buttonZ = document.createElement("button");
+   var buttonZ = document.getElementById("my-button");
   buttonZ.style.display = "none";
   
 
@@ -83,7 +83,7 @@ function openPopup() {
     document.body.appendChild(popup);
 
     function closePopup() {
-     var buttonZ = document.createElement("button");
+      var buttonZ = document.getElementById("my-button");
         buttonZ.style.display = "block";
      
         document.body.removeChild(popup);
