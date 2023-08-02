@@ -98,3 +98,18 @@ const credValue = scriptElement.getAttribute("cred");
 }
 
 button.addEventListener("click", openPopup);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popupButton = document.getElementById("popupButton");
+  const popup = document.getElementById("popup");
+
+  popupButton.addEventListener("click", function () {
+    popup.openPopup();
+    popupButton.style.display = "none"; // Hide the button when the popup opens
+  });
+
+  popup.addEventListener("popup-closed", function () {
+    popupButton.style.display = "block"; // Show the button when the popup is closed
+  });
+});
