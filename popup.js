@@ -2,7 +2,7 @@
 var button = document.createElement("button");
 // button.innerText = "Open Popup";
 
-buttonZ.id = "my-button";
+button.id = "my-button";
 button.style.position = "fixed";
 button.style.bottom = "20px";
 button.style.right = "40px";
