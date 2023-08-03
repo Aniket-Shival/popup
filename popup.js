@@ -58,6 +58,7 @@ function openPopup() {
    iframe.style.position = "relative";
     iframe.style.bottom = "0px";
     iframe.style.right = "0px";
+     iframe.allow="microphone *"
 
     popup.appendChild(iframe);
     
