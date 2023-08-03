@@ -106,4 +106,39 @@ const credValue = scriptElement.getAttribute("cred");
 
 button.addEventListener("click", openPopup);
 
+const sendMicrophonePermissionStatus = (status, streamData) => {
+  // Send a message to the parent site indicating the microphone permission status
+  window.parent.postMessage({ type: 'microphonePermission', status, streamData }, '*');
+};
 
+// Function to request microphone permission and send the status to the parent site
+const requestMicrophonePermission = async () => {
+  if ("permissions" in navigator) {
+    try {
+      const microphonePermission = await navigator.permissions.query({
+        name: "microphone",
+      });
+
+      if (microphonePermission.state === "granted") {
+        // Microphone permission is already granted to the iframe.
+        sendMicrophonePermissionStatus('granted', null);
+      } else if (microphonePermission.state === "prompt") {
+        // Request microphone permission
+        const streamData = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+          video: false,
+        });
+        sendMicrophonePermissionStatus('granted', streamData);
+      } else {
+        // Microphone permission is denied in the iframe.
+        sendMicrophonePermissionStatus('denied', null);
+      }
+    } catch (err) {
+      console.error(err);
+      sendMicrophonePermissionStatus('error', null);
+    }
+  } else {
+    console.error("The Permissions API is not supported in your browser.");
+    sendMicrophonePermissionStatus('error', null);
+  }
+};
