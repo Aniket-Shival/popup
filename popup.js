@@ -97,7 +97,7 @@ const credValue = scriptElement.getAttribute("cred");
  
 
     function loadContent(fileUrl) {
-        iframe.src = `http://localhost:3000/chatPage/${credValue}`;
+        iframe.src = `https://zema.io/chatPage/${credValue}`;
       // 
       
     }
