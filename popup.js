@@ -1,12 +1,14 @@
 var button = document.createElement("button");
 button.id = "my-button";
+button.innerText = "Open Popup"; // Add this line to ensure button text is visible
+
 button.style.position = "fixed";
 button.style.bottom = "20px";
 button.style.right = "40px";
 button.style.padding = "10px";
-button.style.backgroundColor = "transparent"; 
-button.style.backgroundImage = "url('https://github.com/Aniket-Shival/popup/blob/Aniket-Shival-try-7/Zema_Bird_Transperent.png?raw=true')"; 
-button.style.backgroundSize = "100px 100px"; 
+button.style.backgroundColor = "transparent";
+button.style.backgroundImage = "url('https://github.com/Aniket-Shival/popup/blob/Aniket-Shival-try-7/Zema_Bird_Transperent.png?raw=true')";
+button.style.backgroundSize = "100px 100px";
 button.style.backgroundRepeat = "no-repeat";
 button.style.color = "white";
 button.style.border = "none";
@@ -31,11 +33,6 @@ function openPopup() {
     popup.style.width = '80%';
     popup.style.height = "70%";
     popup.style.maxHeight = "500px";
-    popup.style.marginLeft = "2px";
-    popup.style.marginRight = "20px";
-    popup.style.padding = "0px";
-    popup.style.paddingTop = "40px";
-    popup.style.paddingBottom = "20px";
     popup.style.backgroundColor = "#3D4648";
     popup.style.borderRadius = "20px";
     popup.style.zIndex = "9999";
@@ -45,9 +42,9 @@ function openPopup() {
     loader.style.top = "50%";
     loader.style.left = "50%";
     loader.style.transform = "translate(-50%, -50%)";
-    loader.style.border = "16px solid #f3f3f3";
+    loader.style.border = "8px solid #f3f3f3";
     loader.style.borderRadius = "50%";
-    loader.style.borderTop = "16px solid #3498db";
+    loader.style.borderTop = "8px solid #3498db";
     loader.style.width = "60px";
     loader.style.height = "60px";
     loader.style.animation = "spin 2s linear infinite";
@@ -60,22 +57,22 @@ function openPopup() {
     iframe.style.height = "100%";
     iframe.style.border = "none";
     iframe.style.padding = '0';
-    iframe.style.backgroundColor = 'transparent'; 
+    iframe.style.backgroundColor = 'transparent';
     iframe.style.position = "relative";
     iframe.style.bottom = "0px";
     iframe.style.right = "0px";
     iframe.allow = "microphone *";
 
     popup.appendChild(iframe);
-    
+
     var closeButton = document.createElement("button");
     closeButton.style.position = "absolute";
     closeButton.style.top = "10px";
     closeButton.style.right = "10px";
     closeButton.style.padding = "5px";
-    closeButton.style.backgroundImage = "url('https://github.com/Aniket-Shival/popup/blob/Aniket-Shival-try-8/icons8-close-window-48.png?raw=true')"; 
-    closeButton.style.backgroundColor = "transparent"; 
-    closeButton.style.backgroundSize = "25px 25px"; 
+    closeButton.style.backgroundImage = "url('https://github.com/Aniket-Shival/popup/blob/Aniket-Shival-try-8/icons8-close-window-48.png?raw=true')";
+    closeButton.style.backgroundColor = "transparent";
+    closeButton.style.backgroundSize = "25px 25px";
     closeButton.style.backgroundRepeat = "no-repeat";
     closeButton.style.height = '25px';
     closeButton.style.width = '25px';
@@ -84,6 +81,7 @@ function openPopup() {
     closeButton.style.borderRadius = "5px";
 
     popup.appendChild(closeButton);
+
     document.body.appendChild(popup);
 
     function closePopup() {
@@ -95,23 +93,22 @@ function openPopup() {
     closeButton.addEventListener("click", closePopup);
 
     const scriptElement = document.getElementById("popup");
-    console.log("S", scriptElement);
     const credValue = scriptElement.getAttribute("cred");
 
     function loadContent(fileUrl) {
-        iframe.src = `http://localhost:3000/chatPage/${credValue}`;
+        iframe.src = `https://zema.io/chatPage/${credValue}`;
+        iframe.onload = function() {
+            // Once iframe content is loaded, hide the loader
+            popup.removeChild(loader);
+        };
     }
-
-    iframe.onload = function() {
-        loader.style.display = "none";
-    };
 
     loadContent("yourfile.html");
 }
 
 button.addEventListener("click", openPopup);
 
-// CSS for loader
+// CSS for loader animation
 var style = document.createElement('style');
 style.innerHTML = `
 @keyframes spin {
