@@ -97,7 +97,7 @@ function openPopup() {
     const credValue = scriptElement.getAttribute("cred");
 
     function loadContent(fileUrl) {
-        iframe.src = `https://zema.io/chatPage/${credValue}`;
+        iframe.src = `http://localhost:3000/chatPage/${credValue}`;
         iframe.onload = function() {
             // Once iframe content is loaded, hide the loader
             popup.removeChild(loader);
